@@ -29,6 +29,12 @@ const router = createBrowserRouter([
       Component: (await import('./pages/auth/forgot-password')).default,
     }),
   },
+  {
+    path: '/otp',
+    lazy: async () => ({
+      Component: (await import('./pages/auth/otp')).default,
+    }),
+  },
 
   // Main routes
   {
@@ -48,13 +54,19 @@ const router = createBrowserRouter([
       {
         path: 'tasks',
         lazy: async () => ({
-          Component: (await import('./pages/tasks')).default,
+          Component: (await import('@/pages/tasks')).default,
         }),
       },
       {
         path: 'chats',
         lazy: async () => ({
           Component: (await import('@/components/coming-soon')).default,
+        }),
+      },
+      {
+        path: 'apps',
+        lazy: async () => ({
+          Component: (await import('@/pages/apps')).default,
         }),
       },
       {
@@ -67,6 +79,12 @@ const router = createBrowserRouter([
         path: 'analysis',
         lazy: async () => ({
           Component: (await import('@/components/coming-soon')).default,
+        }),
+      },
+      {
+        path: 'extra-components',
+        lazy: async () => ({
+          Component: (await import('@/pages/extra-components')).default,
         }),
       },
       {
